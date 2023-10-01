@@ -12,7 +12,7 @@ UAuraAttributeSet::UAuraAttributeSet()
 {
 	InitHealth(50.f);
 	InitMaxHealth(100.f);
-	InitMana(50.f);
+	InitMana(0.f);
 	InitMaxMana(50.f);
 }
 
@@ -26,6 +26,7 @@ void UAuraAttributeSet::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& Ou
 	DOREPLIFETIME_CONDITION_NOTIFY(UAuraAttributeSet, MaxMana, COND_None, REPNOTIFY_Always);
 }
 
+// Changes to CurrentValue before the change happens, this is normaly used to clamp values
 void UAuraAttributeSet::PreAttributeChange(const FGameplayAttribute& Attribute, float& NewValue)
 {
 	Super::PreAttributeChange(Attribute, NewValue);
