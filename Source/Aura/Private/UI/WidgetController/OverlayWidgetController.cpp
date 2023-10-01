@@ -33,13 +33,17 @@ void UOverlayWidgetController::BindCallbacksToDependencies()
 		AuraAttributeSet->GetMaxManaAttribute()).AddUObject(this, &UOverlayWidgetController::MaxManaChanged);
 
 	// With a Lambda delegate u can avoid to create a bunch of member functions, especially for thigs that are simple
+	// Stephen calling it, Annonimous Function
 	Cast<UAuraAbilitySystemComponent>(AbilitySystemComponent)->EffectAssetTags.AddLambda(
-		[](const FGameplayTagContainer AssetTags)
+		[this](const FGameplayTagContainer AssetTags)
 		{
 			for(const FGameplayTag Tag : AssetTags)
 			{
 				const FString Msg = FString::Printf(TEXT("GE Tag: %s"), *Tag.ToString());
 				GEngine->AddOnScreenDebugMessage(-1, 8.f, FColor::Blue, Msg);
+				// We have to Captured this object we are in([] up in function definition), this is the problem of Lambda functions
+				// We capture 'this' than is this class where GetDataTableRowByTag is def
+				FUIWidgetRow* Row = GetDataTableRowByTag<FUIWidgetRow>(MessageWidgetDataTable, Tag);
 			}
 		}
 	);
