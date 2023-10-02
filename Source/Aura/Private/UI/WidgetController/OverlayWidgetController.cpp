@@ -39,11 +39,17 @@ void UOverlayWidgetController::BindCallbacksToDependencies()
 		{
 			for(const FGameplayTag Tag : AssetTags)
 			{
-				const FString Msg = FString::Printf(TEXT("GE Tag: %s"), *Tag.ToString());
-				GEngine->AddOnScreenDebugMessage(-1, 8.f, FColor::Blue, Msg);
-				// We have to Captured this object we are in([] up in function definition), this is the problem of Lambda functions
-				// We capture 'this' than is this class where GetDataTableRowByTag is def
-				FUIWidgetRow* Row = GetDataTableRowByTag<FUIWidgetRow>(MessageWidgetDataTable, Tag);
+
+				// For example, say that Tag = Message.HealthPotion
+				// "Message.HealthPotion".MatchesTag("Message") will return True, "Message".MatchesTag("Message.HealthPotion") will return False
+				FGameplayTag MessageTag = FGameplayTag::RequestGameplayTag(FName("Message"));
+				if (Tag.MatchesTag(MessageTag))
+				{
+					// We have to Captured this object we are in([] up in function definition), this is the problem of Lambda functions
+					// We capture 'this' than is this class where GetDataTableRowByTag is def
+					const FUIWidgetRow* Row = GetDataTableRowByTag<FUIWidgetRow>(MessageWidgetDataTable, Tag);
+					MessageWidgetRow.Broadcast(*Row);
+				}
 			}
 		}
 	);
