@@ -32,6 +32,11 @@ protected:
 	// TObjectPtr - It´s a pointer. it´s like a raw pointer like USkeletalMeshComponent*, but
 	// supports access tracking and optional lazy load behavior in editor builds
 
+	UPROPERTY(EditAnywhere, Category= "Combat")
+	FName WeaponTipSocketName;
+
+	virtual FVector GetCombatSocketLocation() override;
+
 	UPROPERTY()
 	TObjectPtr<UAbilitySystemComponent> AbilitySystemComponent;
 
