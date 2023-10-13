@@ -5,6 +5,7 @@
 
 #include "AbilitySystemComponent.h"
 #include "AbilitySystem/AuraAbilitySystemComponent.h"
+#include "Aura/Aura.h"
 #include "Chaos/SpatialAccelerationCollection.h"
 #include "Components/CapsuleComponent.h"
 
@@ -13,7 +14,9 @@ AAuraCharacterBase::AAuraCharacterBase()
 	PrimaryActorTick.bCanEverTick = false;
 
 	GetCapsuleComponent()->SetCollisionResponseToChannel(ECC_Camera, ECR_Ignore);
-	GetMesh()->SetCollisionResponseToChannel(ECC_Camera, ECR_Ignore); 
+	GetMesh()->SetCollisionResponseToChannel(ECC_Camera, ECR_Ignore);
+	GetMesh()->SetCollisionResponseToChannel(ECC_Projectile, ECR_Overlap);
+	GetMesh()->SetGenerateOverlapEvents(true);
 	
 	// U need the TEXT macro for FStrings, not for FName, like below
 	Weapon = CreateDefaultSubobject<USkeletalMeshComponent>("Weapon");
