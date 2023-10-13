@@ -6,10 +6,14 @@
 #include "AbilitySystemComponent.h"
 #include "AbilitySystem/AuraAbilitySystemComponent.h"
 #include "Chaos/SpatialAccelerationCollection.h"
+#include "Components/CapsuleComponent.h"
 
 AAuraCharacterBase::AAuraCharacterBase()
 {
 	PrimaryActorTick.bCanEverTick = false;
+
+	GetCapsuleComponent()->SetCollisionResponseToChannel(ECC_Camera, ECR_Ignore);
+	GetMesh()->SetCollisionResponseToChannel(ECC_Camera, ECR_Ignore); 
 	
 	// U need the TEXT macro for FStrings, not for FName, like below
 	Weapon = CreateDefaultSubobject<USkeletalMeshComponent>("Weapon");
