@@ -6,7 +6,6 @@
 #include "AbilitySystemComponent.h"
 #include "AbilitySystem/AuraAbilitySystemComponent.h"
 #include "Aura/Aura.h"
-#include "Chaos/SpatialAccelerationCollection.h"
 #include "Components/CapsuleComponent.h"
 
 AAuraCharacterBase::AAuraCharacterBase()
