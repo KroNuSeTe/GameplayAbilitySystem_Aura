@@ -4,7 +4,6 @@
 #include "..\..\Public\AbilitySystem\AuraAttributeSet.h"
 
 #include "AbilitySystemBlueprintLibrary.h"
-#include "AssetTypeCategories.h"
 #include "GameFramework/Character.h"
 #include "GameplayEffectExtension.h"
 #include "Net/UnrealNetwork.h"
@@ -12,7 +11,6 @@
 #include "AbilitySystem/AuraAbilitySystemComponent.h"
 #include "AbilitySystem/AuraAbilitySystemLibrary.h"
 #include "Interaction/CombatInterface.h"
-#include "Kismet/GameplayStatics.h"
 #include "Player/AuraPlayerController.h"
 
 UAuraAttributeSet::UAuraAttributeSet()
