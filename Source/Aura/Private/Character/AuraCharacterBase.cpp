@@ -126,6 +126,12 @@ int32 AAuraCharacterBase::GetMinionCount_Implementation()
 	return MinionCount;
 }
 
+// We use IncrementMinionCount with a negative Amount to decrement MinionCount
+void AAuraCharacterBase::IncrementMinionCount_Implementation(int32 Amount)
+{
+	MinionCount += Amount;
+}
+
 void AAuraCharacterBase::InitAbilityActorInfo()
 {
 	
