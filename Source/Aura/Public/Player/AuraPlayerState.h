@@ -4,7 +4,6 @@
 
 #include "CoreMinimal.h"
 #include "AbilitySystemInterface.h"
-#include "STransformViewportToolbar.h"
 #include "GameFramework/PlayerState.h"
 #include "AuraPlayerState.generated.h"
 

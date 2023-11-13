@@ -1,4 +1,4 @@
-// Copyright KroNus Games 2023
+ // Copyright KroNus Games 2023
 
 
 #include "AbilitySystem/ModMagCalc/MMC_MaxHealth.h"
