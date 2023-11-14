@@ -19,13 +19,13 @@ public:
     static const FAuraGameplayTags& Get(){return GameplayTags;}
     static void InitializeNativeGameplayTags();
 
- // Primary Attributes
+	// Primary Attributes
 	FGameplayTag Attributes_Primary_Strength;
 	FGameplayTag Attributes_Primary_Intelligence;
 	FGameplayTag Attributes_Primary_Resilience;
 	FGameplayTag Attributes_Primary_Vigor;
 
- // Secondary Attributes
+	// Secondary Attributes
     FGameplayTag Attributes_Secondary_Armor;
 	FGameplayTag Attributes_Secondary_ArmorPenetration;
     FGameplayTag Attributes_Secondary_BlockChance;
@@ -37,13 +37,13 @@ public:
 	FGameplayTag Attributes_Secondary_MaxHealth;
 	FGameplayTag Attributes_Secondary_MaxMana;
 
- // Resistance Attributes
+	// Resistance Attributes
 	FGameplayTag Attributes_Resistance_Fire;
 	FGameplayTag Attributes_Resistance_Lightning;
 	FGameplayTag Attributes_Resistance_Arcane;
 	FGameplayTag Attributes_Resistance_Physical;
 
- // Meta Attributes
+	// Meta Attributes
 	FGameplayTag Attributes_Meta_IncomingXP;
 	
 	// Input Tags
@@ -56,17 +56,14 @@ public:
 	FGameplayTag InputTag_Passive_1;
 	FGameplayTag InputTag_Passive_2;
 
- // Damage Tags
+	// Damage Tags
 	FGameplayTag Damage;
 	FGameplayTag Damage_Fire;
 	FGameplayTag Damage_Lightning;
 	FGameplayTag Damage_Arcane;
 	FGameplayTag Damage_Physical;
 
- // 
-	FGameplayTag Abilities_None;
-	
-	
+	// Enemy Abilities
 	FGameplayTag Abilities_Attack;
 	FGameplayTag Abilities_Summon;
 	
@@ -83,23 +80,29 @@ public:
 	FGameplayTag Abilities_Type_Passive;
 	FGameplayTag Abilities_Type_None;
 
+	// Spell Abilities Tags
+	FGameplayTag Abilities_None;
 	FGameplayTag Abilities_Fire_FireBolt;
 	FGameplayTag Abilities_Lightning_Electrocute;
 
+	// Cooldown Tags
 	FGameplayTag Cooldown_Fire_FireBolt;
 
+	// Combat Socket Tags
 	FGameplayTag CombatSocket_Weapon;
 	FGameplayTag CombatSocket_RightHand;
 	FGameplayTag CombatSocket_LeftHand;
 	FGameplayTag CombatSocket_Tail;
-
+	
+	// Montage Attack Tags
 	FGameplayTag Montage_Attack_1;
 	FGameplayTag Montage_Attack_2;
 	FGameplayTag Montage_Attack_3;
 	FGameplayTag Montage_Attack_4;;
 
 	TMap<FGameplayTag, FGameplayTag> DamageTypesToResistances;
-	
+
+	// Effects	
 	FGameplayTag Effects_HitReact;
 
 private:
