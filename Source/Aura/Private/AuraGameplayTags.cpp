@@ -17,7 +17,7 @@ void FAuraGameplayTags::InitializeNativeGameplayTags()
 
 	GameplayTags.Attributes_Primary_Intelligence = UGameplayTagsManager::Get().AddNativeGameplayTag(
 		FName("Attributes.Primary.Intelligence"),
-		FString("Increases magical damage"));
+		FString("Increases magical damage"));ç
 	
 	GameplayTags.Attributes_Primary_Resilience = UGameplayTagsManager::Get().AddNativeGameplayTag(
 		FName("Attributes.Primary.Resilience"),
@@ -177,12 +177,8 @@ void FAuraGameplayTags::InitializeNativeGameplayTags()
 
 
 	/*
-	 *  Abilities
+	 *  Combat Abilities Tags
 	 */
-	GameplayTags.Abilities_None = UGameplayTagsManager::Get().AddNativeGameplayTag(
-		FName("Abilities.None"),
-		FString("No Ability - like the nullptr for Ability Tags"));
-	
 	GameplayTags.Abilities_Attack = UGameplayTagsManager::Get().AddNativeGameplayTag(
 		FName("Abilities.Attack"),
 		FString("Attack Ability Tag"));
@@ -190,6 +186,13 @@ void FAuraGameplayTags::InitializeNativeGameplayTags()
 	GameplayTags.Abilities_Summon = UGameplayTagsManager::Get().AddNativeGameplayTag(
 		FName("Abilities.Summon"),
 		FString("Summon Ability Tag"));
+
+	/*
+	 *  Spell Abilities Tags
+	 */
+	GameplayTags.Abilities_None = UGameplayTagsManager::Get().AddNativeGameplayTag(
+		FName("Abilities.None"),
+		FString("No Ability - like the nullptr for Ability Tags"));
 
 	GameplayTags.Abilities_Fire_FireBolt = UGameplayTagsManager::Get().AddNativeGameplayTag(
 		FName("Abilities.Fire.FireBolt"),
@@ -199,10 +202,16 @@ void FAuraGameplayTags::InitializeNativeGameplayTags()
 	FName("Abilities.Lightning.Electrocute"),
 	FString("Electrocute Ability Tag"));
 
+	/*
+	 *  Hit React
+	 */
 	GameplayTags.Abilities_HitReact = UGameplayTagsManager::Get().AddNativeGameplayTag(
 		FName("Abilities.HitReact"),
 		FString("Hit React Ability"));
 
+	/*
+	 *  Status Abilities Tags
+	 */
 	GameplayTags.Abilities_Status_Eligible = UGameplayTagsManager::Get().AddNativeGameplayTag(
 		FName("Abilities.Status.Eligible"),
 		FString("Eligible Status"));
@@ -219,6 +228,9 @@ void FAuraGameplayTags::InitializeNativeGameplayTags()
 		FName("Abilities.Status.Unlocked"),
 		FString("Unlocked Status"));
 
+		/*
+	 *  Abilities Types Tags
+	 */
 	GameplayTags.Abilities_Type_None = UGameplayTagsManager::Get().AddNativeGameplayTag(
 		FName("Abilities.Type.None"),
 		FString("None Type"));
