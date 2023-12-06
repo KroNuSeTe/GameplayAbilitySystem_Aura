@@ -96,6 +96,11 @@ public:
 	FGameplayTag Abilities_Fire_FireBolt;
 	FGameplayTag Abilities_Lightning_Electrocute;
 
+	// Passive Spell
+	FGameplayTag Abilities_Passive_HaloOfProtection;
+	FGameplayTag Abilities_Passive_LifeSiphon;
+	FGameplayTag Abilities_Passive_ManaSiphon;
+
 	// Cooldown Tags
 	FGameplayTag Cooldown_Fire_FireBolt;
 
@@ -116,6 +121,12 @@ public:
 
 	// Effects	
 	FGameplayTag Effects_HitReact;
+
+	// Player Block Tags
+	FGameplayTag Player_Block_InputPressed;
+	FGameplayTag Player_Block_InputHeld;
+	FGameplayTag Player_Block_InputReleased;
+	FGameplayTag Player_Block_CursorTrace;
 
 private:
  static FAuraGameplayTags GameplayTags;
